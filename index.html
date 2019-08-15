@@ -24,8 +24,7 @@ function insertKotlinCodeBlock(title, code){
 }
 
 function getCodeIntoMainFun(code) {
-    var processedCode = code.replace('<','&lt;').replace('>','&gt;')
-    return `fun main(args: Array&lt;String&gt;) {\n//sampleStart\n${processedCode}\n//sampleEnd\n}`
+    return `fun main(args: Array<String>) {\n//sampleStart\n${code}\n//sampleEnd\n}`.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
     
 fetch("LazySequence.kt")
