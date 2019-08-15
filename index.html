@@ -17,7 +17,7 @@ function insertKotlinCodeBlock(title, code){
     
     document.getElementById('container').insertAdjacentHTML(
         'beforeend',
-        `<div class="kotlin-code"><pre><code class="hljs language-kotlin" theme="darcula" data-target-platform="jvm" folded-button="false">${code}</code></pre></div>`
+        `<div class="kotlin-code"><pre><code class="hljs language-kotlin" theme="darcula" data-target-platform="jvm" folded-button="false">${code}.replace('<','&lt;').replace('>','&gt;')</code></pre></div>`
     );
   
     KotlinPlayground('code');
