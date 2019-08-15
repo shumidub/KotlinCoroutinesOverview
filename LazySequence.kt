@@ -20,4 +20,4 @@ val fibonacci : Sequence<Int> = sequence {
     }
 }
 
-fibonacci.take(10).forEach { println("Recived: $it") }
+fibonacci.take(10).forEach { println("Received: $it") }
