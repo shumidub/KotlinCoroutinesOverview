@@ -7,6 +7,11 @@ import kotlinx.coroutines.withContext
 fun main(args: Array<String>) {
 
 //sampleStart
+suspend fun longComputation() : Int{
+  delay(2000L)
+  return 42
+}   
+  
 println("Start")
 GlobalScope.launch(Dispatchers.Default) {
   println("Launch coroutine")
@@ -16,13 +21,5 @@ GlobalScope.launch(Dispatchers.Default) {
 }
 
 println("Thread is run forward")
-
-suspend fun longComputation() : Int{
-  delay(2000L)
-  return 42
-}
 //sampleEnd                 
-
 }
-
-
