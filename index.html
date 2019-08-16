@@ -29,7 +29,11 @@ function getCodeIntoMainFun(code) {
     
 fetch("LazySequence.kt")
     .then( response => response.text() )
-    .then( text => insertKotlinCodeBlock("Lazy Sequence", getCodeIntoMainFun(text)) )    
+    .then( text => insertKotlinCodeBlock("Lazy Sequence", getCodeIntoMainFun(text)))
+    
+fetch("Launch.kt")
+    .then( response => response.text() )
+    .then( text => insertKotlinCodeBlock("Launch", getCodeIntoMainFun(text)) )      
     
 </script>
 </section> 
