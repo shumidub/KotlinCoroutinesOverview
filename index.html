@@ -33,7 +33,7 @@ fetch("LazySequence.kt")
     
 fetch("Launch.kt")
     .then( response => response.text() )
-    .then( text => insertKotlinCodeBlock("Launch", text))      
+    .then( text => insertKotlinCodeBlock("Launch", text.replace(/</g, '&lt;').replace(/>/g, '&gt;')))      
     
 </script>
 </section> 
