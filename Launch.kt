@@ -6,11 +6,10 @@ import kotlinx.coroutines.withContext
 import kotlinx.coroutines.runBlocking
 
 fun main(args: Array<String>) {
-runBlocking {
 //sampleStart
 suspend fun longComputation() : Int{
-  delay(2000L)
-  return 42
+  delay(500L)
+  return 47
 }   
   
 println("Start")
@@ -22,6 +21,6 @@ GlobalScope.launch(Dispatchers.Default) {
 }
 
 println("Thread is run forward")
-//sampleEnd                 
-}
+//sampleEnd
+Thread.sleep(1000L)  
 }
