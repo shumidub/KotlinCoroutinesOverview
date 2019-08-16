@@ -9,7 +9,8 @@
 <section id="container" style="max-width:500px;">
 <script src="https://unpkg.com/kotlin-playground@1" theme="darcula"></script>
 <script>
-function insertKotlinCodeBlock(title, code){
+    
+async insertKotlinCodeBlock(title, code){
     document.getElementById('container').insertAdjacentHTML(
         'beforeend',
         `<h2 style="font-size: 1.2em">${title}</h2>`
@@ -27,7 +28,7 @@ function getCodeIntoMainFun(code) {
     return `fun main(args: Array<String>) {\n//sampleStart\n${code}\n//sampleEnd\n}`.replace(/</g, '&lt;').replace(/>/g, '&gt;')
 }
     
-fetch("LazySequence.kt")
+await fetch("LazySequence.kt")
     .then( response => response.text() )
     .then( text => insertKotlinCodeBlock("Lazy Sequence", getCodeIntoMainFun(text)))
     
